@@ -12,11 +12,9 @@ body{
 
 /*The following code is created under the NAV element */
 .main-nav{
-    background-color:aqua;
-    width: 100%;
+    background-color:chartreuse;
     min-height: 10px;
     padding: 10px;
-    /* position: fixed; */
     text-align: center;
 }
 .main-nav-list{
@@ -32,12 +30,9 @@ body{
     font-family: 'Inter Tight', sans-serif;
 }
 
-li:first-child{
-    flex-basis:300px;
-}
 li{
     padding-top:25px;
-    flex-basis:300px; 
+    flex-basis:100%; 
     list-style-type: none;
     flex-grow:1;
     flex-wrap:nowrap;
@@ -52,18 +47,20 @@ li{
     display:flex;
     flex-grow:1;
     flex-wrap:wrap;
-    padding:10px;
     background-color:whitesmoke;
     font-weight:normal;
 }
 #main_profile_picture{
     margin:auto;
-    flex-basis:200px;
-    height:120px;
+    padding:25px 0px 20px;
+    flex-basis:50%;
+    height:140px;
 } 
  #introduction_p{
-    margin:auto 0 auto;
-    flex-basis:320px;
+    text-align: center;
+    margin:auto;
+    flex-basis:80%;
+    padding-bottom:20px;
 } 
 
 #portfolio_id{
@@ -75,31 +72,31 @@ li{
 /*The following code is related to the <div id="photo_collection_div"> element*/
 #photo_collection_div{
     display:flex;
-    width:95%;
-    margin:10px auto 150px;
+    width:100%;
+    margin:10px 0px 75px;
     flex-wrap:wrap;
     justify-content:space-between; 
 }
-.first_figcaption{
+
+#photo_collection_div figure{
+    flex-grow:1;
+    flex-basis:100%; 
+    margin:0px;
     text-align:center;
-}
-.second_figcaption{
-    text-align:center;
-    padding-bottom:20px;
 }
 #photo_collection_div img{
     padding-top:10px;
-    /* width:99%;
-    height:99%; */
-    width:99%;
+    width:75%;
     height:50%;
-    margin:0 auto 0;
-
 }
-#photo_collection_div figure{
-    flex-grow:1;
-    flex-basis:145px; 
-    margin:0px;
+
+.first_figcaption{
+    padding-top:5px;
+    /* text-align:center; */
+}
+.second_figcaption{
+    /* text-align:center; */
+    padding-bottom:10px;
 }
 
 /*The following code is intended for the MY SKILLS section*/
@@ -134,6 +131,7 @@ li{
 }
 
 #second_footer{
+   font-size:10px;
    display:flex;
    text-align: center;
    width:100%;
@@ -150,8 +148,10 @@ li{
     padding-left:20px;
     text-align:left;
     flex-grow:1;
-    margin-right:auto;
     
+}
+#second_footer_hide_div{
+    display:none;
 }
 #last_footer{
     text-align:center;
@@ -165,141 +165,123 @@ strong{
 
 /*MEDIA QUERIES HERE*/
 
-@media screen and (min-width:321px) and (max-width:768px){
+@media screen and (min-width:768px){
 
-    /*This section deals with the navigation bar*/
-    #list-item-fullname{
-        flex-basis:769px;
+    li:nth-of-type(n+2){
+        flex-basis:20%;
     }
-    li:not(#list-item-fullname){
-        flex-grow:1;
-        flex-basis:65px;
-    }
-    /*This section deals with the introductory portion (photo and paragraph)*/
+
+
     #heading_div{
         flex-direction:row-reverse;
-        flex-wrap:nowrap;
     }
-    #main_profile_picture{
-        width:200px;
-        height:125px;
-        margin-right:0px;
-        margin-left:5px;
+    #heading_div img{
+        flex-basis:30%;
     }
-    #introduction_p{
-        margin:auto 0 auto;
-        flex-basis:500px;
+    #heading_div p{
+        flex-basis:60%
     }
-    /*This section deals with the photo collection portion of the website (main part)*/
+
+
     #photo_collection_div figure{
-        flex-grow:1;
-        flex-basis:144.5px;
-        margin:0px;
-    }
-    #photo_collection_div figure{
-        display:flex;
-        flex-direction:column;
+        flex-basis:49%;
     }
     #photo_collection_div figure img{
-        margin:auto;
-        width:99%;
-        height:99%;
-        flex-grow:1;
-    
-    }
-     @media screen and (min-width:478px) {
-        #photo_collection_div figure{
-            flex-basis:218px;
-        }
-    }
-    @media screen and (min-width:708px) {
-        #photo_collection_div figure{
-            flex-basis:327px;
-        }
-    }     
-}
-
-
-
-
-@media screen and (min-width:769px)
-{   
-   .main-nav-list{
-        flex-wrap:nowrap;
-   }
-   #list-item-fullname{
-        flex-basis:200px;
-        flex-grow:0;
-   }
-   li:not(#list-item-fullname){
-        flex-basis:100px;
-        flex-grow:0;
-   }
-
-   /* #heading_div{
-    display:flex;
-    flex-grow:1;
-    flex-wrap:wrap;
-    padding:10px;
-    background-color:whitesmoke;
-    font-weight:normal;
-    } */
-    #heading_div{
-        flex-direction:row-reverse;
-        height:250px;
-    }
-    /* #main_profile_picture{
-        margin:auto;
-        flex-basis:200px;
-        height:120px;
-    }  */
-    #main_profile_picture{
-        margin:auto 0 auto;
-        flex-basis:225px;
-        height:120px;
-        padding-right:10vw;
-    } 
-    /* #introduction_p{
-        border:1px solid purple;
-        flex-basis:320px;
-    } */
-    #introduction_p{
-        margin:auto 0 auto;
-        flex-grow:1;
-        margin-right:5vw;
-        margin-left:5vw;
-    }
-   
-
-    #photo_collection_div figure{
-        display:flex;
-        flex-basis:236px;
-        flex-direction: column;
-        padding-left:12px;
-        padding-right:12px;
-    }  
-    #photo_collection_div figure img{
+        width:95%;
         height:65%;
     }
-    @media screen and (min-width:1100px)
+
+
+
+    #second_footer_firstflexitem
     {
-        #photo_collection_div figure{
-            flex-basis:300px;
-        }
+        flex-basis:300px;
+        flex-grow:0;
     }
-     @media screen and (min-width:1386px)
-     {
-        #photo_collection_div figure{
-            flex-basis:400px;
-        }
-    } 
-    
+    #second_footer_hide_div{
+        display:flex;
+        flex-grow:1;
+    }
+    #second_footer_hide_div p{
+        flex-basis:10%;
+        flex-grow:1;
+    }
+    #hi{
+        display:none;   
+    }
+   
+}
+
+
+@media screen and (min-width:1024px){
+
+    .main-nav-list li{
+        flex-basis:5%;
+    }
+    #list-item-fullname {
+        flex-basis:40%;
+        text-align:left;
+    }
+
+
+    #heading_div img{
+        flex-basis:15%;
+        padding:25px;
+    }
+    #heading_div p{
+        flex-basis:70%
+    }
+
+    #photo_collection_div figure{
+        flex-basis:33%;
+    }
 
 }
 
 
 
-/* @media screen and (max-width:1024px){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @media screen and (min-width:768px){
+
+   
+} */
+
+
+
+
+/* @media screen and (min-width:1024px)
+{   
+   
+    
+
+} */
+
+
+
+/* @media screen and (min-width:1024px){
     li{
         flex-basis:321px;
     }
