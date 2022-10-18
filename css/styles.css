@@ -6,7 +6,7 @@ main{
 }
 body{
     font-size:12px;
-    font-family:'Inter Tight', sans-serif;
+    font-family:'Inter Tight', 'Roboto Condensed', sans-serif;
     font-weight:300;
 }
 
@@ -25,13 +25,16 @@ body{
     padding: 0 50px;
     margin:0 auto;
 }
-#list-item-fullname h2{
+#list-item-fullname h3{
     margin:0px;
     font-family: 'Inter Tight', sans-serif;
 }
-
+.main-nav-list h3{
+    margin:0px;
+}
 li{
     padding-top:25px;
+    padding-bottom:25px;
     flex-basis:100%; 
     list-style-type: none;
     flex-grow:1;
@@ -100,6 +103,9 @@ li{
 }
 
 /*The following code is intended for the MY SKILLS section*/
+#my_skills_div{
+    font:300 100% 'Roboto Condensed';
+}
 #my_skills_div h3{
     text-align:center;
 }
